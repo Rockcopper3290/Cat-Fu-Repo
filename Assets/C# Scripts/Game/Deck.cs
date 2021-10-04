@@ -59,7 +59,8 @@ public class Deck : MonoBehaviour
     }
     public Card Deal()
     {
-        Card card = deck.RemoveAt(0);
+        Card card = deck[0];
+        deck.RemoveAt(0);
         //if deck is empty
         if (deck.Count == 0)
         {
@@ -67,14 +68,6 @@ public class Deck : MonoBehaviour
         }
         return card;
     }
-
-
-    //debugging: will print out a complete list of all possiable card combinations
-    private void Start()
-    {
-        CreateCards();
-    }
-
 
     //public void shuffle()
     //{
@@ -87,5 +80,13 @@ public class Deck : MonoBehaviour
     //        deck.set(index, x);
     //    }
     //}
+
+    //debugging: will print out a complete list of all possiable card combinations
+    private void Start()
+    {
+        CreateCards();
+    }
+
+
 
 }
