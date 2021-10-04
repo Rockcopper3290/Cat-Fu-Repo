@@ -8,18 +8,19 @@ public class Card : MonoBehaviour
 
 
     //holds the different card elements/types
-    public
+    public static int FIRE = 0;
+    public static int WATER = 1;
+    public static int SNOW = 2;
 
     //holds the different card categories/colours
-    public enum cardColour
-    {
-        RED,
-        ORANGE,
-        YELLOW,
-        GREEN,
-        BLUE,
-        PURPLE
-    }
+
+    public static int RED = 0;
+    public static int ORANGE = 1;
+    public static int YELLOW = 2;
+    public static int GREEN = 3;
+    public static int BLUE = 4;
+    public static int PURPLE = 5;
+
 
     static string[] elements = { "fire", "water", "snow" };
     static string[] colors = { "red", "orange", "yellow", "green", "blue", "purple" };
@@ -48,6 +49,40 @@ public class Card : MonoBehaviour
     public int getColor()
     {
         return color;
+    }
+    public string getElementAsString()
+    {
+        return elements[element];
+    }
+
+    public string getValueAsString()
+    {
+        return value.ToString();
+    }
+
+    public string getColorAsString()
+    {
+        return colors[color];
+    }
+
+    public string getArticle()
+    {
+        if (color == ORANGE)
+        {
+            return "an";
+        }
+        return "a";
+    }
+
+    public string outputAsString()
+    {
+        return getColorAsString() + " " + getElementAsString() + " card of value " + getValueAsString();
+    }
+    
+
+    private void Start()
+    {
+        outputAsString();
     }
 }
 

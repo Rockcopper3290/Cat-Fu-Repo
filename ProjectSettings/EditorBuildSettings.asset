@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Main_Menu.unity
+    guid: 085c4deee73faba4cae4c4dab5920083
+  - enabled: 1
+    path: Assets/Scenes/Loading_Screen.unity
+    guid: 11e79daccddc875409f57aa3dcb15fcb
+  - enabled: 1
+    path: Assets/Scenes/Game_Board.unity
+    guid: 5dc5832dcd51c7248acba3a3f781f69a
+  - enabled: 1
+    path: Assets/Scenes/DifficultyPicker.unity
+    guid: 5d46b3fdcfa69524fb13f4037249fd4f
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 3f6c97593833a48418a7348b60321d9c
   m_configObjects: {}

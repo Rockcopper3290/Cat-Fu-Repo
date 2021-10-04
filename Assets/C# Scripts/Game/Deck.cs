@@ -4,94 +4,88 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
+    //holds the different card elements/types
+    public static int FIRE = 0;
+    public static int WATER = 1;
+    public static int SNOW = 2;
 
-    //houses a list of every card combonation in the game
+    //holds the different card categories/colours
 
-    //package com.polymars.game;
-
-    //import java.util.ArrayList;
-    //import java.util.Random;
-
-
-    public enum cardType
-    {
-        FIRE,
-        WATER,
-        SNOW
-    }
-    
-
-    public enum cardColour
-    {
-        RED,
-        ORANGE,
-        YELLOW,
-        GREEN,
-        BLUE,
-        PURPLE
-    }
+    public static int RED = 0;
+    public static int ORANGE = 1;
+    public static int YELLOW = 2;
+    public static int GREEN = 3;
+    public static int BLUE = 4;
+    public static int PURPLE = 5;
 
     private List<Card> deck;
-    //Random rand = new Random();
+    // Random rand = new Random();
+    
 
     public Deck()
     {
         deck = new List<Card>();
     }
 
-    public void createCards()
+    
+    public void CreateCards()
     {
+        Card card;
         for (int value = 2; value <= 12; value++)
         {
             for (int element = FIRE; element <= SNOW; element++)
             {
-                int color = rand.nextInt(PURPLE + 1);
-                Card card = new Card(element, value, color);
-                deck.add(card);
+                for (int color = RED; color <= PURPLE; color++)
+                {
+                    //int color = rand.nextInt(PURPLE + 1);
+                    card = new Card(element, value, color);
+
+                    //will print out a complete list of all possiable card combinations
+                    Debug.Log(card.outputAsString());
+                    deck.Add(card);
+                    //Debug.Log();
+                }
             }
         }
-        shuffle();
+        
+
+        //shuffle();
     }
 
-
-
-    public List<Card> getCards()
+    
+    public List<Card> GetCards()
     {
         return deck;
     }
-
-    public Card deal()
+    public Card Deal()
     {
-        Card card = deck.remove(0);
-        if (deck.isEmpty())
+        Card card = deck.RemoveAt(0);
+        //if deck is empty
+        if (deck.Count == 0)
         {
-            createCards();
+            CreateCards();
         }
         return card;
     }
 
-    public void shuffle()
+
+    //debugging: will print out a complete list of all possiable card combinations
+    private void Start()
     {
-        for (int i = 0; i < deck.size(); i++)
-        {
-            int index = rand.nextInt(deck.size());
-            Card x = deck.get(i);
-            Card y = deck.get(index);
-            deck.set(i, y);
-            deck.set(index, x);
-        }
+        CreateCards();
     }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    //public void shuffle()
+    //{
+    //    for (int i = 0; i < deck.size(); i++)
+    //    {
+    //        int index = rand.nextInt(deck.size());
+    //        Card x = deck.get(i);
+    //        Card y = deck.get(index);
+    //        deck.set(i, y);
+    //        deck.set(index, x);
+    //    }
+    //}
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
