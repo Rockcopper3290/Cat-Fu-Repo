@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    
+   /* 
     //holds the different card elements/types
     public static int FIRE = 0;
     public static int WATER = 1;
@@ -20,74 +20,89 @@ public class Deck : MonoBehaviour
     public static int BLUE = 4;
     public static int PURPLE = 5;
 
-    private List<Card> deck;
-    public int rand;
-    //rand = new Random.State();
-    
-    //int rand = new Random();
-    
+    //private List<Card> deck;
+    //public int rand;
+    ////rand = new Random.State();
 
-    public Deck()
+    ////int rand = new Random();
+    */
+
+    public GameObject Card_A_12_RED;
+    public GameObject Card_A_11_RED;
+    public GameObject PlayerOneSection;
+    public GameObject EnemyArea;
+    public int HandSize = 0;
+    const int MAX_HandSize = 5;
+
+    List<GameObject> cards = new List<GameObject>();
+
+    void Start()
     {
-        deck = new List<Card>();
-        CreateCards();
+        cards.Add(Card_A_12_RED);
+        cards.Add(Card_A_11_RED);
     }
-
-    
-    public void CreateCards()
+    public void OnClick()
     {
-        Card card;
-        for (int value = 2; value <= 12; value++)
+        while (HandSize < MAX_HandSize)
         {
-            for (int element = FIRE; element <= SNOW; element++)
-            {
-                for (int color = RED; color <= PURPLE; color++)
-                {
-                    //int color = rand.nextInt(PURPLE + 1);
-                    card = new Card(element, value, color);
+            GameObject playerCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
+            playerCard.transform.SetParent(PlayerOneSection.transform, false);
 
-                    //will print out a complete list of all possiable card combinations
-                    Debug.Log(card.outputAsString());
-                    deck.Add(card);
-                    //Debug.Log();
-                }
-            }
+            GameObject enemyCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
+            enemyCard.transform.SetParent(EnemyArea.transform, false);
+
+            HandSize++;
         }
-        
 
-        //shuffle();
     }
 
-    
-    public List<Card> GetCards()
-    {
-        return deck;
-    }
-    public Card Deal()
-    {
-        Card card = deck[0];
-        deck.RemoveAt(0);
-        //if deck is empty
-        if (deck.Count == 0)
+   
+
+
+
+    /*
+        public Deck()
         {
+            deck = new List<Card>();
             CreateCards();
         }
-        return card;
-    }
-
-    public void shuffle()
-    {
-        for (int i = 0; i < deck.Count; i++)
+        public void CreateCards()
         {
-            //int index = rand.nextInt(deck.size());
-            //Card x = deck.get(i);
-            //Card y = deck.get(index);
-            //deck.set(i, y);
-            //deck.set(index, x);
+            Card card;
+            for (int value = 2; value <= 12; value++)
+            {
+                for (int element = FIRE; element <= SNOW; element++)
+                {
+                    for (int color = RED; color <= PURPLE; color++)
+                    {
+                        //int color = rand.nextInt(PURPLE + 1);
+                        card = new Card(element, value, color);
+
+                        //will print out a complete list of all possiable card combinations
+                        //Debug.Log(card.outputAsString());
+                        deck.Add(card);
+                        //Debug.Log();
+                    }
+                }
+            }
+
+
+            //shuffle();
         }
-    }
-    
-
-
-
+        public List<Card> GetCards()
+        {
+            return deck;
+        }
+        public Card Deal()
+        {
+            Card card = deck[0];
+            deck.RemoveAt(0);
+            //if deck is empty
+            if (deck.Count == 0)
+            {
+                CreateCards();
+            }
+            return card;
+        }
+      */
 }

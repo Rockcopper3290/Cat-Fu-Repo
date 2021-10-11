@@ -6,7 +6,6 @@ public class Card : MonoBehaviour
 {
     //card class holds the element/type, value/power and a colour
 
-
     //holds the different card elements/types
     public static int ATTACK = 0;
     public static int DEFEND = 1;
