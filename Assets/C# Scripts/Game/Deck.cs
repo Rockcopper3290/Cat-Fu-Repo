@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Deck : MonoBehaviour
 {
+    
     //holds the different card elements/types
     public static int FIRE = 0;
     public static int WATER = 1;
@@ -19,12 +21,16 @@ public class Deck : MonoBehaviour
     public static int PURPLE = 5;
 
     private List<Card> deck;
-    // Random rand = new Random();
+    public int rand;
+    //rand = new Random.State();
+    
+    //int rand = new Random();
     
 
     public Deck()
     {
         deck = new List<Card>();
+        CreateCards();
     }
 
     
@@ -69,23 +75,18 @@ public class Deck : MonoBehaviour
         return card;
     }
 
-    //public void shuffle()
-    //{
-    //    for (int i = 0; i < deck.size(); i++)
-    //    {
-    //        int index = rand.nextInt(deck.size());
-    //        Card x = deck.get(i);
-    //        Card y = deck.get(index);
-    //        deck.set(i, y);
-    //        deck.set(index, x);
-    //    }
-    //}
-
-    //debugging: will print out a complete list of all possiable card combinations
-    private void Start()
+    public void shuffle()
     {
-        CreateCards();
+        for (int i = 0; i < deck.Count; i++)
+        {
+            //int index = rand.nextInt(deck.size());
+            //Card x = deck.get(i);
+            //Card y = deck.get(index);
+            //deck.set(i, y);
+            //deck.set(index, x);
+        }
     }
+    
 
 
 

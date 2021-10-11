@@ -8,12 +8,11 @@ public class Card : MonoBehaviour
 
 
     //holds the different card elements/types
-    public static int FIRE = 0;
-    public static int WATER = 1;
-    public static int SNOW = 2;
+    public static int ATTACK = 0;
+    public static int DEFEND = 1;
+    public static int GUARDBREAK = 2;
 
     //holds the different card categories/colours
-
     public static int RED = 0;
     public static int ORANGE = 1;
     public static int YELLOW = 2;
@@ -22,7 +21,7 @@ public class Card : MonoBehaviour
     public static int PURPLE = 5;
 
 
-    static string[] elements = { "fire", "water", "snow" };
+    static string[] elements = { "attack", "defend", "guardbreak" };
     static string[] colors = { "red", "orange", "yellow", "green", "blue", "purple" };
 
     int element;
