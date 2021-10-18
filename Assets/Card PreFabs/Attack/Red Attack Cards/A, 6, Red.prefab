@@ -281,7 +281,9 @@ GameObject:
   - component: {fileID: 8909268031889457886}
   - component: {fileID: 8967879887730871023}
   - component: {fileID: 3551606053481019304}
-  - component: {fileID: 1914152533194807848}
+  - component: {fileID: -2566812468176467099}
+  - component: {fileID: 7402600748101238764}
+  - component: {fileID: 9137480912507601867}
   m_Layer: 6
   m_Name: A, 6, Red
   m_TagString: Untagged
@@ -395,7 +397,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!114 &1914152533194807848
+--- !u!114 &-2566812468176467099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,11 +406,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 8909268031889457858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cefbe118eaeda764898cf4ee8e74da47, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e4c0ffc86100704bab9c1197dcd0f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Card_A_12_RED: {fileID: 0}
-  Card_A_11_RED: {fileID: 0}
-  PlayerOneSection: {fileID: 0}
-  EnemyArea: {fileID: 0}
-  HandSize: 0
+  dropZone: {fileID: 3313730820845776853, guid: 1542fed70631076489e72339834042fd, type: 3}
+--- !u!114 &7402600748101238764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909268031889457858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59757658b0252c749bed119c15758684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newXSize: 0
+  newYSize: 0
+--- !u!114 &9137480912507601867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909268031889457858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -2566812468176467099}
+          m_TargetAssemblyTypeName: DragDrop, Assembly-CSharp
+          m_MethodName: StartDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -2566812468176467099}
+          m_TargetAssemblyTypeName: DragDrop, Assembly-CSharp
+          m_MethodName: EndDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

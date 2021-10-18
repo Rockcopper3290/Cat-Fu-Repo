@@ -3,7 +3,75 @@ guid: cefbe118eaeda764898cf4ee8e74da47
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Card_A_12_BLUE: {fileID: 6282127411175100295, guid: 0dd4ef1924e281142bb632e0937c431f, type: 3}
+  - Card_A_11_BLUE: {fileID: 3788467224529733240, guid: 813091f2d6b3bda46bd65510bc7e32ba, type: 3}
+  - Card_A_10_BLUE: {fileID: 1074756050132510723, guid: 6cd2c4a4bde90a94989e3162d77072fe, type: 3}
+  - Card_A_9_BLUE: {fileID: 5181137750470223046, guid: 709195e448c025045b5e2e8d2dedfa03, type: 3}
+  - Card_A_8_BLUE: {fileID: 4677384597680270162, guid: f5c51b6fb0200dd4e827bbab7ae5151a, type: 3}
+  - Card_A_7_BLUE: {fileID: 5628975639244400271, guid: b529a8af670bb7f4a9c1af80ed51a112, type: 3}
+  - Card_A_6_BLUE: {fileID: 923476155681853846, guid: eec2391ac44dc104ebb4ab46877894e6, type: 3}
+  - Card_A_5_BLUE: {fileID: 7479972253126735225, guid: 766204237f8a94d4d8ae227dc726c51a, type: 3}
+  - Card_A_4_BLUE: {fileID: 3670915744893739793, guid: 19e701e8b44b07741a07c7e95d687da6, type: 3}
+  - Card_A_3_BLUE: {fileID: 6859987826151004174, guid: 04e3755dc288b5d4c86dede38b6c5709, type: 3}
+  - Card_A_2_BLUE: {fileID: 8388421468987788078, guid: 2675e846cb5ebdd489f1ddea1471a399, type: 3}
+  - Card_A_12_GREEN: {fileID: 6161105733506382398, guid: 553b1835927c6064288e405688252d07, type: 3}
+  - Card_A_11_GREEN: {fileID: 5600679161432632637, guid: a14fc4efd30fbb44d88ffc368d39e1e5, type: 3}
+  - Card_A_10_GREEN: {fileID: 5008990653305745497, guid: feb2a5da6af665c439444bac7735fa82, type: 3}
+  - Card_A_9_GREEN: {fileID: 511445750460387686, guid: 396f60b29405c584691169de8b7c8690, type: 3}
+  - Card_A_8_GREEN: {fileID: 7704337753827372927, guid: e71f058aaff25b9428daf82caaf0076a, type: 3}
+  - Card_A_7_GREEN: {fileID: 5034146438457354025, guid: 5bcb6680b39ce434f80ff440198ec4a3, type: 3}
+  - Card_A_6_GREEN: {fileID: 7505538152088243317, guid: 550053825187b13408ae2259dce2f24c, type: 3}
+  - Card_A_5_GREEN: {fileID: 3344541336804882424, guid: ac511c54a6f6fd144b24e7425535f1ea, type: 3}
+  - Card_A_4_GREEN: {fileID: 1051533316035213865, guid: d71516a6cfc91da4aa1133afcb2ec825, type: 3}
+  - Card_A_3_GREEN: {fileID: 1154981364346966623, guid: ee864a52fdd54ff40a030490ebc970de, type: 3}
+  - Card_A_2_GREEN: {fileID: 5795074900661721394, guid: 1f7e2d75fde9a71478a6124ef8236d0f, type: 3}
+  - Card_A_12_ORANGE: {fileID: 8595303561510830418, guid: 41a89e6bc168a8840b6c523c8e7cc536, type: 3}
+  - Card_A_11_ORANGE: {fileID: 1828943083912465007, guid: 5cebfdb89b7d0e144ad2047b35c2d13e, type: 3}
+  - Card_A_10_ORANGE: {fileID: 1731210041218930180, guid: b195809ab25ea0841bcc29d20dacfc70, type: 3}
+  - Card_A_9_ORANGE: {fileID: 4224556137961551851, guid: 617ec21feee3fc7419f4734d0240d161, type: 3}
+  - Card_A_8_ORANGE: {fileID: 967973814316543513, guid: 399c2bd1e53789e49a641d8e0bc95792, type: 3}
+  - Card_A_7_ORANGE: {fileID: 7926332864817900862, guid: ca22f6de990edfe48a519af87cf7aa5f, type: 3}
+  - Card_A_6_ORANGE: {fileID: 8365028704630712750, guid: f58a5aa06e8efa44598cc990fd2bc4d2, type: 3}
+  - Card_A_5_ORANGE: {fileID: 6874313434406439300, guid: a3e10b48b0893b74e93062b10def8196, type: 3}
+  - Card_A_4_ORANGE: {fileID: 4110929833172342945, guid: 6fd2fe20dfa8c974581971d821fa864e, type: 3}
+  - Card_A_3_ORANGE: {fileID: 2789832049906249193, guid: 81bfe0b826b5a5549aa923dfc167f174, type: 3}
+  - Card_A_2_ORANGE: {fileID: 2799838022317650592, guid: acb8e916290bfc04f8645f96c3bd08aa, type: 3}
+  - Card_A_12_PURPLE: {fileID: 40240454208989655, guid: e99a67922145f2e48bcc163a4535a14a, type: 3}
+  - Card_A_11_PURPLE: {fileID: 7480016353769043924, guid: 71dfac8e97cc56f4d89340950fbb75e2, type: 3}
+  - Card_A_10_PURPLE: {fileID: 2948987131704835573, guid: df02428e7915c9c499fc6fab730aca3f, type: 3}
+  - Card_A_9_PURPLE: {fileID: 2705580884473826120, guid: 0bfe4df4fbb1ba0449f3cf6194130428, type: 3}
+  - Card_A_8_PURPLE: {fileID: 2650903103190195674, guid: b5cd4d2237b8268498dfaf811df2d179, type: 3}
+  - Card_A_7_PURPLE: {fileID: 8383803923544815251, guid: 62885f90bda434e4ca252af18e61cb0c, type: 3}
+  - Card_A_6_PURPLE: {fileID: 4425019698652948088, guid: 72482ce018fc96748bab1b1380b13bd5, type: 3}
+  - Card_A_5_PURPLE: {fileID: 4977482805870605612, guid: d15efa17eee798e4baa97ce6958c0691, type: 3}
+  - Card_A_4_PURPLE: {fileID: 2987908699323975968, guid: 457ca4a021efd4d448c351658e3ec4b1, type: 3}
+  - Card_A_3_PURPLE: {fileID: 5865364456654178820, guid: 07677bf777d65f04db9a7bde483facda, type: 3}
+  - Card_A_2_PURPLE: {fileID: 8341468738155161443, guid: dfa8bc6b72adf8540afb9c5f6ca6088a, type: 3}
+  - Card_A_12_RED: {fileID: 8738264985175673200, guid: 526d694cba315ad4da6b592c069cf5f6, type: 3}
+  - Card_A_11_RED: {fileID: 9091779579226343345, guid: f458437f88c7ce64a826cecb244ab1a4, type: 3}
+  - Card_A_10_RED: {fileID: 9102520446561013062, guid: eafeacf956e72aa44b107f3ca5146545, type: 3}
+  - Card_A_9_RED: {fileID: 1379053201146100008, guid: 39d823bca04c0d341b83aec2c2fea861, type: 3}
+  - Card_A_8_RED: {fileID: 1663288064103508395, guid: 8e39cb87e1bbd4a459df26b2cc1331ff, type: 3}
+  - Card_A_7_RED: {fileID: 5051459643880584612, guid: d9c4ffbe59fc1a747869a094dfdf9bc3, type: 3}
+  - Card_A_6_RED: {fileID: 8909268031889457858, guid: a71fb1429c494964a8b267684b0b1091, type: 3}
+  - Card_A_5_RED: {fileID: 1963853046499498534, guid: 14da70e74d2ee8b4990945026085ab6c, type: 3}
+  - Card_A_4_RED: {fileID: 8710300972275214946, guid: de013eabab537f347b2e310e3fa72629, type: 3}
+  - Card_A_3_RED: {fileID: 5092719000826374890, guid: ee3efa1b3f6b07043b2cb716c47cd409, type: 3}
+  - Card_A_2_RED: {fileID: 8273191388159539660, guid: 2840f0cc42ab88747971af773edba08c, type: 3}
+  - Card_A_12_YELLOW: {fileID: 7911501774774569034, guid: 13a73862eb850c7489c577862bde9a9a, type: 3}
+  - Card_A_11_YELLOW: {fileID: 102278261553398831, guid: 1b103453dc8640645a2919db0dcae981, type: 3}
+  - Card_A_10_YELLOW: {fileID: 3423255842375903474, guid: fb8444ccddf7bf6469389e9fb518a23b, type: 3}
+  - Card_A_9_YELLOW: {fileID: 1345075955273121348, guid: be94f762891f9584a86f9c7009340a6c, type: 3}
+  - Card_A_8_YELLOW: {fileID: 1795335475541859974, guid: 9b0dc0304c43e2e4d8ede02281ac255f, type: 3}
+  - Card_A_7_YELLOW: {fileID: 674754433559070926, guid: cd195a09af58d1742bad527bc52935fd, type: 3}
+  - Card_A_6_YELLOW: {fileID: 1290093898115446803, guid: fb2e4cf1ab6c3a44abc5fb8acc28a7d9, type: 3}
+  - Card_A_5_YELLOW: {fileID: 8997566229523702760, guid: 05ffaad38ac99474c99c5304123d6ef8, type: 3}
+  - Card_A_4_YELLOW: {fileID: 5397692884953616073, guid: 407270bf51b63564d8b13f758391e889, type: 3}
+  - Card_A_3_YELLOW: {fileID: 8240587564934226380, guid: 2ac83a1afe4ffb544874228cdb16b18d, type: 3}
+  - Card_A_2_YELLOW: {fileID: 2968701192872190346, guid: e1880e39ab616be49b1f1b60e154a1f6, type: 3}
+  - PlayerOneSection: {instanceID: 0}
+  - EnemyArea: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

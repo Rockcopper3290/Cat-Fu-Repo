@@ -34,6 +34,8 @@ public class Card : MonoBehaviour
         this.color = color;
     }
 
+    
+
     public int getElement()
     {
         return element;
@@ -77,10 +79,5 @@ public class Card : MonoBehaviour
         return getColorAsString() + " " + getElementAsString() + " card of value " + getValueAsString();
     }
     
-
-    private void Start()
-    {
-        outputAsString();
-    }
 }
 

@@ -17,48 +17,60 @@ public class Hand : MonoBehaviour
     public static int BLUE = 4;
     public static int PURPLE = 5;
 
-    private List<Card> hand; 
+    Deck Hands;
 
-   // list of cards which represent the players hand 
-   public Hand()
+    public List<GameObject> playerHand;
+    public List<GameObject> enemyHand;
+
+
+    // list of cards which represent the players hand 
+    public Hand()
     {
-        hand = new List<Card>(); 
+        playerHand = Hands.playerHand;
+        enemyHand = Hands.enemyHand;
     }
 
-    
-    public void addCard(Card card)
+    int Get_PlayerHand_Size()
     {
-        hand.Add(card); 
+        int playerHandSize;
+        playerHandSize = 1;
+
+        return playerHandSize;
     }
 
-    public Card GetCard(int element, int value)
-    {
-        for(int i = 0; i < hand.Count; i++) // for the size of hand ( amount of cards in hand)
-        {
-            // if hand at i's element is equal to passed in element and hand at i's value is equal to passed in value
-            if(hand[i].getElement() == element && hand[i].getValue() == value) 
-            {
-                return hand[i]; // then return the card in hand
-            }
-        }
+    //public void addCard(Card card)
+    //{
+    //    hand.Add(card);
+    //}
 
-        return null; 
-    }
+    //public Card GetCard(int element, int value)
+    //{
+    //    for (int i = 0; i < hand.Count; i++) // for the size of hand ( amount of cards in hand)
+    //    {
+    //        // if hand at i's element is equal to passed in element and hand at i's value is equal to passed in value
+    //        if (hand[i].getElement() == element && hand[i].getValue() == value)
+    //        {
+    //            return hand[i]; // then return the card in hand
+    //        }
+    //    }
 
-    // let player pick a card
-    public Card useCard(int element, int value)
-    {
-        Card card = GetCard(element, value); // create a card element and get what card player using
+    //    return null;
+    //}
 
-        if(card == null) // if no card return null
-        {
-            return null; 
-        }
+    //// let player pick a card
+    //public Card useCard(int element, int value)
+    //{
+    //    Card card = GetCard(element, value); // create a card element and get what card player using
 
-        hand.Remove(card); // remove the players card  
+    //    if (card == null) // if no card return null
+    //    {
+    //        return null;
+    //    }
 
-        return card;
-    }
+    //    hand.Remove(card); // remove the players card  
+
+    //    return card;
+    //}
 
     // let AI pick a card
     /*

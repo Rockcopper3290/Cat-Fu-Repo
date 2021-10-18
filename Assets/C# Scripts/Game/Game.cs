@@ -14,56 +14,48 @@ public class Game : MonoBehaviour
     public static int LOSE = 1;
     public static int TIE = 2;
 
-    static int MAX_HAND = 5;
-
     static string[] elementsArr = { "attack", "defend", "guardbreak" };
     private List<string> elements = new List<string>(elementsArr);
 
-    static bool newGame;
-    static bool startMatch;
-    static Deck deck;
+    //static bool newGame;
+    //static bool startMatch;
+    ////static Deck deck;
 
-    static Hand playerHand;
-    // static Bank player Bank; 
+    //static Deck playerHand;
+    //// static Bank player Bank; 
 
-    static Hand AIHand;
-    // static Bank AIBank; 
+    //static Deck AIHand;
+    //// static Bank AIBank; 
 
-    static Card currentPlayerCard = null;
-    static Card currentAICard = null;
+    Card currentPlayerCard;
+    Card currentCPUCard;
 
-    // static Random rand = new Random(); 
 
     public void Start()
     {
-        newGame = true; 
+        
     }
 
-    public void game(string input)
+    
+    Hand hands;
+    Deck deck;
+    Submit_Button PlayerBoard;
+     
+    public void ScoreRound()
     {
-        if (newGame)
-        {
-            newGame = false;
-            deck = new Deck();
-            //deck.createCards(); 
+      
+       
 
-            playerHand = new Hand();
-            createHand(playerHand);
-            //playerBank = new Bank()
-
-            AIHand = new Hand();
-            createHand(AIHand);
-            //AIBank = new Bank();
-
-        }
+       
     }
 
-    static void createHand(Hand hand)
+    public void BackEndStuff()
     {
-        for(int i = 0; i < MAX_HAND; i++)
-        {
-            
-        }
+
+        
+        
     }
+
+
 
 }
