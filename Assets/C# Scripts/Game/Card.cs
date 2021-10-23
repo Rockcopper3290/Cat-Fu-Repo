@@ -12,33 +12,51 @@ public class Card : MonoBehaviour
     public static int GUARDBREAK = 2;
 
     //holds the different card categories/colours
-    public static int RED = 0;
-    public static int ORANGE = 1;
-    public static int YELLOW = 2;
-    public static int GREEN = 3;
-    public static int BLUE = 4;
-    public static int PURPLE = 5;
+    public static int BLUE = 0;
+    public static int GREEN = 1;
+    public static int ORANGE = 2;
+    public static int PURPLE = 3;
+    public static int RED = 4;
+    public static int YELLOW = 5;
 
 
+    string CardType;
     static string[] elements = { "attack", "defend", "guardbreak" };
-    static string[] colors = { "red", "orange", "yellow", "green", "blue", "purple" };
+    static string[] colors = { "Blue", "Green", "Orange", "Purple", "Red", "Yellow" };
 
     int element;
     int value;
     int color;
 
-    public Card(int element, int value, int color)
+    public List <int> GenerateNewCard(char element, int value, string color)
     {
-        this.element = element;
-        this.value = value;
-        this.color = color;
-    }
+        //List<int> cardValuesList;
 
-    
+        asignElement(element);
+        
+        return null;
+    }
 
     public int getElement()
     {
         return element;
+    }
+    public string asignElement(char element)
+    {
+        if (element == 'A')
+        {
+            CardType = elements[0];
+        }
+        else if (element == 'D')
+        {
+            CardType = elements[1];
+        }
+        else if (element == 'G')
+        {
+            CardType = elements[2];
+        }
+
+        return CardType;
     }
 
     public int getValue()
@@ -50,34 +68,8 @@ public class Card : MonoBehaviour
     {
         return color;
     }
-    public string getElementAsString()
-    {
-        return elements[element];
-    }
 
-    public string getValueAsString()
-    {
-        return value.ToString();
-    }
 
-    public string getColorAsString()
-    {
-        return colors[color];
-    }
-
-    public string getArticle()
-    {
-        if (color == ORANGE)
-        {
-            return "an";
-        }
-        return "a";
-    }
-
-    public string outputAsString()
-    {
-        return getColorAsString() + " " + getElementAsString() + " card of value " + getValueAsString();
-    }
     
 }
 

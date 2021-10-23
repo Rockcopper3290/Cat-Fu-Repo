@@ -41,6 +41,7 @@ public class Deck : MonoBehaviour
     public GameObject Card_A_2_
     */
 
+
     // lists holding which type of cards there are 
     public List<GameObject> AttackCards;
     public List<GameObject> DefenceCards;
@@ -139,42 +140,74 @@ public class Deck : MonoBehaviour
     //public GameObject Card_A_3_YELLOW;
     //public GameObject Card_A_2_YELLOW;
 
-    public GameObject PlayerOneSection;
+    public GameObject PlayerOneHandSection;
+    public GameObject PlayerOneDropZone;
+
     public GameObject EnemyArea;
+    public GameObject CardBack;
+    public GameObject CardBackArea;
     public int HandSize = 0;
+
     const int MAX_HandSize = 5;
 
     List<GameObject> cards = new List<GameObject>();
     public List<GameObject> playerHand;
-    public List<GameObject> enemyHand; 
+    public List<GameObject> enemyHand;
+    public List<GameObject> enemyCardBackList;
+
+
+    Debugging Debug_Output;
+    NextTurn nxt_Turn;
 
     void Start()
     {
+        //HandSize = PlayerOneSection.transform.childCount;
 
         // adds the type of cards to the cards list
         cards.AddRange(AttackCards);
         cards.AddRange(DefenceCards);
         cards.AddRange(GuardBCards);
 
+
     }
 
+    private void Update()
+    {
+        HandSize = PlayerOneHandSection.transform.childCount;
+
+    }
 
     public void OnClick()
     {
-        while (HandSize < MAX_HandSize)
+        while (HandSize < MAX_HandSize && PlayerOneDropZone.transform.childCount == 0)
         {
             GameObject playerCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
-            playerCard.transform.SetParent(PlayerOneSection.transform, false);
+            playerCard.name = playerCard.name.Replace("(Clone)", "").Trim();
+            playerCard.transform.SetParent(PlayerOneHandSection.transform, false);
 
             playerHand.Add(playerCard);
 
+
             GameObject enemyCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
+            enemyCard.name = enemyCard.name.Replace("(Clone)", "").Trim();
             enemyCard.transform.SetParent(EnemyArea.transform, false);
 
             enemyHand.Add(enemyCard);
 
+
+            GameObject enemyCardB = Instantiate(CardBack, new Vector3(0, 0, 0), Quaternion.identity);
+            enemyCardB.transform.SetParent(CardBackArea.transform, false);
+
+            enemyCardBackList.Add(enemyCardB);
+
             HandSize++;
         }
 
+    }
+
+    public void CardBack_ReduceSize()
+    {
+        GameObject.Destroy(enemyCardBackList[0]);
+        enemyCardBackList.RemoveAt(0);
     }
 }

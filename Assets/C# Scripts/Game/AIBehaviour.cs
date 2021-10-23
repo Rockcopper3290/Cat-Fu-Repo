@@ -6,10 +6,7 @@ using UnityEngine.UI;
 public class AIBehaviour : MonoBehaviour
 {
     public GameObject EnemyDropSection;
-
-
-
-    static public GameObject EnemySelection;
+    public GameObject EnemySelection;
 
 
 
@@ -20,41 +17,33 @@ public class AIBehaviour : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        // check if the player has pressed the submit button, 
+        if (submitButton.subButtonClicked == true)
+        {
+            // if so then play the random card from the hand.
 
-            // check if the player has pressed the submit button, 
-            if (submitButton.subButtonClicked == true)
-            {
-                // if so then play the random card
+            submitButton.subButtonClicked = false;
 
-                int randomCard;
-                randomCard = Random.Range(0, deck.enemyHand.Count);
+            int randomCard;
+            //generates a random number
+            randomCard = Random.Range(0, deck.enemyHand.Count);
 
-                EnemySelection = deck.enemyHand[randomCard];
-                Debug.Log("Random Card Selected");
-                EnemySelection.transform.SetParent(EnemyDropSection.transform, false); // set the card to the parent of the dropzone object
-                                                                                       //EnemySelection = GameObject.Find(gameObject.name); 
-                submitButton.subButtonClicked = false;
+            //The card that the CPU will play is the card that correlates to the random number
+            EnemySelection = deck.enemyHand[randomCard];
+            Debug.Log("Random Card Selected");
 
-                //deck.enemyHand.Remove(EnemySelection);
-                deck.enemyHand.RemoveAt(randomCard);
+            //set the chosen card to the parent of the dropzone object
+            EnemySelection.transform.SetParent(EnemyDropSection.transform, false);
+            deck.enemyHand.Remove(EnemySelection); //Removes selected card from the list of cards in the CPU's hand
 
-                
-                
-                GameObject CPU_CardInPlay = EnemySelection;
-                if (CPU_CardInPlay)
-                {
-                    //CPU_CardInPlay.name += "(Clone)";
-                    //Destroy(CPU_CardInPlay.gameObject);
 
-                    Debug.Log(name + "has been destroyed.");
-                }
+            deck.CardBack_ReduceSize();
 
-                
-                Debug.Log("Random Card Deleted in list");
 
-            }
+            AIPlayed = true;
+        }
 
-        // when played allow the player to pick a new card to play 
+
 
     }
 }

@@ -17,7 +17,7 @@ public class Hand : MonoBehaviour
     public static int BLUE = 4;
     public static int PURPLE = 5;
 
-    Deck Hands;
+    //Deck Hands;
 
     public List<GameObject> playerHand;
     public List<GameObject> enemyHand;
@@ -26,17 +26,10 @@ public class Hand : MonoBehaviour
     // list of cards which represent the players hand 
     public Hand()
     {
-        playerHand = Hands.playerHand;
-        enemyHand = Hands.enemyHand;
+        //playerHand = Hands.playerHand;
+        //enemyHand = Hands.enemyHand;
     }
 
-    int Get_PlayerHand_Size()
-    {
-        int playerHandSize;
-        playerHandSize = 1;
-
-        return playerHandSize;
-    }
 
     //public void addCard(Card card)
     //{
