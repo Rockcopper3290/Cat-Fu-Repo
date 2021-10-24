@@ -1,5 +1,5 @@
 // Layla Darwiche 
-
+// & Matthew
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,4 +14,12 @@ public class ChangeToNextScene : MonoBehaviour
         SceneManager.LoadScene(sceneName); // load the level name given
     }
 
+    public void PlayAgain (string sceneName)
+    {
+        SceneManager.LoadScene(sceneName); // load the level name given
+    }
+    public void ReturnToMenu(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName); // load the level name given
+    }
 }

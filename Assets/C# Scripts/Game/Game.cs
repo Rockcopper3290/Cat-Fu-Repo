@@ -96,7 +96,7 @@ public class Game : MonoBehaviour
         if (DidThePlayerWin == true)
         {
             //score the players card
-            bank.Player_ScoredCards(Player_Card_Array[0], Player_Card_Array[2]);
+            bank.ScoreCards(Player_Card_Array[0], Player_Card_Array[4], DidThePlayerWin);
             Debug.Log("Player won the round");
 
         }
@@ -110,7 +110,7 @@ public class Game : MonoBehaviour
         else if (DidThePlayerWin == false)
         {
             //CPU Scores their card
-            bank.CPU_ScoredCards(CPU_Card_Array[0], CPU_Card_Array[2]);
+            bank.ScoreCards(CPU_Card_Array[0], CPU_Card_Array[4], DidThePlayerWin);
             Debug.Log("CPU won the round");
 
         }
