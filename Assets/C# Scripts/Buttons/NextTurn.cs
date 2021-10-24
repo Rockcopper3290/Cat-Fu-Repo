@@ -14,15 +14,17 @@ public class NextTurn : MonoBehaviour
 
     private void Update()
     {
-        if (playerChose.subButtonClicked == true && AIChose.AIPlayed == true)
-        {
-            playerBlocking.SetActive(true);
-        }
-        if (!playerChose.subButtonClicked && !AIChose.AIPlayed)
-        {
-            playerBlocking.SetActive(false);
-        }
 
+
+    }
+
+    public void StartBlocking()
+    {
+        playerBlocking.SetActive(true);
+    }
+    public void StopBlocking()
+    {
+            playerBlocking.SetActive(false);
     }
 }
 

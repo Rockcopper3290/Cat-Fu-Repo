@@ -23,10 +23,12 @@ public class Game : MonoBehaviour
 
     public string Player_Card;
     public string CPU_Card;
+    public bool NextTurn_Ready;
 
     public Submit_Button submitButton;
     public AIBehaviour AI_Behaviour;
     public Deck deck;
+    public Bank bank;
 
     //public Debugging debug;
 
@@ -55,23 +57,23 @@ public class Game : MonoBehaviour
 
         // Split with multiple separators  
         string[] Player_Card_Array = Player_Card.Split(new char[] { ' ', ',', '.', '-', '\n', '\t' });
-        Debug.Log(Player_Card_Array[0]);
+        //Debug.Log(Player_Card_Array[0]);
         Player_Card_Array[0] = asignElement(Player_Card_Array[0]);
-        Debug.Log(Player_Card_Array[0]);
+        //Debug.Log(Player_Card_Array[0]);
 
-        Debug.Log(Player_Card_Array[2]);
-        Debug.Log(Player_Card_Array[4]);
+        //Debug.Log(Player_Card_Array[2]);
+        //Debug.Log(Player_Card_Array[4]);
 
 
 
 
         string[] CPU_Card_Array = CPU_Card.Split(new char[] { ' ', ',', '.', '-', '\n', '\t' });
-        Debug.Log(CPU_Card_Array[0]);
+       // Debug.Log(CPU_Card_Array[0]);
         CPU_Card_Array[0] = asignElement(CPU_Card_Array[0]);
-        Debug.Log(CPU_Card_Array[0]);
+        //Debug.Log(CPU_Card_Array[0]);
 
-        Debug.Log(CPU_Card_Array[2]);
-        Debug.Log(CPU_Card_Array[4]);
+        //Debug.Log(CPU_Card_Array[2]);
+        //Debug.Log(CPU_Card_Array[4]);
 
 
 
@@ -94,25 +96,29 @@ public class Game : MonoBehaviour
         if (DidThePlayerWin == true)
         {
             //score the players card
+            bank.Player_ScoredCards(Player_Card_Array[0], Player_Card_Array[2]);
             Debug.Log("Player won the round");
 
         }
-        else if (DidThePlayerWin == false && Player_Card_Array[2] != CPU_Card_Array[2])
-        {
-            //CPU Scores their card
-            Debug.Log("CPU won the round");
-
-        }
-        else if (DidThePlayerWin == false && Player_Card_Array[2] == CPU_Card_Array[2])
+        else if (DidThePlayerWin == false && Player_Card_Array[2] == CPU_Card_Array[2] && Player_Card_Array[0] == CPU_Card_Array[0])
         {
             // A Tie, No one scores this round, continue to next round
+            bank.GameTied();
             Debug.Log("Tie: no winners");
+
+        }
+        else if (DidThePlayerWin == false)
+        {
+            //CPU Scores their card
+            bank.CPU_ScoredCards(CPU_Card_Array[0], CPU_Card_Array[2]);
+            Debug.Log("CPU won the round");
 
         }
 
 
 
         AI_Behaviour.AIPlayed = false;
+        NextTurn_Ready = true;
     }
 
     private string asignElement(string element)
@@ -166,14 +172,17 @@ public class Game : MonoBehaviour
         if (Player_PowerScore > CPU_PowerScore)
         {
             // Player Scores the round
+            answer = true;
         }
         else if (Player_PowerScore < CPU_PowerScore)
         {
             // CPU Scores the round
+            answer = false;
         }
         else if (Player_PowerScore == CPU_PowerScore)
         {
             // A Tie, No one scores this round, continue to next round
+            answer = false;
         }
 
 

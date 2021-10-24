@@ -143,6 +143,9 @@ public class Deck : MonoBehaviour
     public GameObject PlayerOneHandSection;
     public GameObject PlayerOneDropZone;
 
+    public GameObject ClickToDraw;
+    public GameObject ClickToBoardWipe;
+
     public GameObject EnemyArea;
     public GameObject CardBack;
     public GameObject CardBackArea;
@@ -157,7 +160,9 @@ public class Deck : MonoBehaviour
 
 
     Debugging Debug_Output;
-    NextTurn nxt_Turn;
+    public NextTurn nxt_Turn;
+    public Game game;
+    public Bank bank;
 
     void Start()
     {
@@ -175,33 +180,65 @@ public class Deck : MonoBehaviour
     {
         HandSize = PlayerOneHandSection.transform.childCount;
 
+        if (game.NextTurn_Ready == true)
+        {
+            ClickToBoardWipe.SetActive(true);
+            ClickToDraw.SetActive(false);
+        }
+        else
+        {
+            ClickToBoardWipe.SetActive(false);
+            ClickToDraw.SetActive(true);
+
+        }
     }
 
     public void OnClick()
     {
-        while (HandSize < MAX_HandSize && PlayerOneDropZone.transform.childCount == 0)
+        //resets the board
+        if (game.NextTurn_Ready == true)
         {
-            GameObject playerCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
-            playerCard.name = playerCard.name.Replace("(Clone)", "").Trim();
-            playerCard.transform.SetParent(PlayerOneHandSection.transform, false);
-
-            playerHand.Add(playerCard);
-
-
-            GameObject enemyCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
-            enemyCard.name = enemyCard.name.Replace("(Clone)", "").Trim();
-            enemyCard.transform.SetParent(EnemyArea.transform, false);
-
-            enemyHand.Add(enemyCard);
-
-
-            GameObject enemyCardB = Instantiate(CardBack, new Vector3(0, 0, 0), Quaternion.identity);
-            enemyCardB.transform.SetParent(CardBackArea.transform, false);
-
-            enemyCardBackList.Add(enemyCardB);
-
-            HandSize++;
+            game.NextTurn_Ready = false;
+            bank.DestroyCards();
         }
+        DrawCards();
+
+    }
+
+    public void DrawCards()
+    {
+        
+
+        // 
+        if (HandSize < MAX_HandSize && PlayerOneDropZone.transform.childCount == 0)
+        {
+            for (int i = HandSize; i < MAX_HandSize; i++)
+            {
+                GameObject playerCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
+                playerCard.name = playerCard.name.Replace("(Clone)", "").Trim();
+                playerCard.transform.SetParent(PlayerOneHandSection.transform, false);
+
+                playerHand.Add(playerCard);
+
+
+                GameObject enemyCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 0, 0), Quaternion.identity);
+                enemyCard.name = enemyCard.name.Replace("(Clone)", "").Trim();
+                enemyCard.transform.SetParent(EnemyArea.transform, false);
+
+                enemyHand.Add(enemyCard);
+
+
+                GameObject enemyCardB = Instantiate(CardBack, new Vector3(0, 0, 0), Quaternion.identity);
+                enemyCardB.transform.SetParent(CardBackArea.transform, false);
+
+                enemyCardBackList.Add(enemyCardB);
+            }
+
+            // will allow the players to move their cards again
+            nxt_Turn.StopBlocking();
+        }
+
+
 
     }
 

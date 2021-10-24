@@ -14,6 +14,9 @@ public class Submit_Button : MonoBehaviour
     public GameObject PlayerDropSection;
 
     public Deck deck;
+    public Game game;
+    public NextTurn nxt_Turn;
+
 
     //public AIBehaviour AI_Behaviour;
     //public DragDrop dragDrop;
@@ -27,29 +30,37 @@ public class Submit_Button : MonoBehaviour
 
     public void OnClick_PlayerSubmitCard ()
     {
-        // if the player has pressed the submit button but either has more 
-        // then 1 cards in the play space or 0 cards in the play space
-        if (PlayerBoard.transform.childCount > 1 || PlayerBoard.transform.childCount < 1)
+        //Here we are checking to see if the players have wiped the board.
+        //code for board wipe can be found in GAME but is used/reset in DECK
+        if (game.NextTurn_Ready == false)
         {
-            //TODO: output error message to the board so that the players can see it
-            Debug.Log("!! Please enter the correct amount of cards !!");
+            // if the player has pressed the submit button but either has more 
+            // then 1 cards in the play space or 0 cards in the play space
+            if (PlayerBoard.transform.childCount > 1 || PlayerBoard.transform.childCount < 1)
+            {
+                //TODO: output error message to the board so that the players can see it
+                //Debug.Log("!! Please enter the correct amount of cards !!");
+            }
+            else
+            {
+                //TODO: lock player from interfering with their cards
+                //Debug.Log("!! Please wait till the CPU has made their turn !!");
+
+                PlayerSelection = PlayerBoard.transform.GetChild(0).gameObject;
+
+                deck.playerHand.Remove(PlayerSelection);
+
+
+                //BlockPlayerPlay.SetActive(true);
+                //AI_Behaviour.Update();
+                //playerHand.playerHand.Remove()
+
+                nxt_Turn.StartBlocking();
+
+                //used as a flag to make sure that the program knows that the player has taken their turn
+                subButtonClicked = true;
+            }
         }
-        else
-        {
-            //TODO: lock player from interfering with their cards
-            Debug.Log("!! Please wait till the CPU has made their turn !!");
-
-            PlayerSelection = PlayerBoard.transform.GetChild(0).gameObject;
-
-            deck.playerHand.Remove(PlayerSelection);
-
-
-            //BlockPlayerPlay.SetActive(true);
-            //AI_Behaviour.Update();
-            //playerHand.playerHand.Remove()
-
-            //used as a flag to make sure that the program knows that the player has taken their turn
-            subButtonClicked = true;  
-        }
+        
     }
 }

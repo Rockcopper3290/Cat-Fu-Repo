@@ -30,7 +30,7 @@ public class AIBehaviour : MonoBehaviour
 
             //The card that the CPU will play is the card that correlates to the random number
             EnemySelection = deck.enemyHand[randomCard];
-            Debug.Log("Random Card Selected");
+            //Debug.Log("Random Card Selected");
 
             //set the chosen card to the parent of the dropzone object
             EnemySelection.transform.SetParent(EnemyDropSection.transform, false);
