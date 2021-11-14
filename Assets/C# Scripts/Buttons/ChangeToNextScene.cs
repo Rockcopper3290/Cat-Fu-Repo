@@ -9,17 +9,22 @@ using UnityEngine.SceneManagement;
 
 public class ChangeToNextScene : MonoBehaviour
 {
+    public AudioSource buttonClickSound;
+
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName); // load the level name given
+        buttonClickSound.Play(); 
     }
 
     public void PlayAgain (string sceneName)
     {
         SceneManager.LoadScene(sceneName); // load the level name given
+        buttonClickSound.Play();
     }
     public void ReturnToMenu(string sceneName)
     {
         SceneManager.LoadScene(sceneName); // load the level name given
+        buttonClickSound.Play();
     }
 }

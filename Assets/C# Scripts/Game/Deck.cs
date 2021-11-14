@@ -30,6 +30,7 @@ public class Deck : MonoBehaviour
     public List<GameObject> enemyHand;
     public List<GameObject> enemyCardBackList;
 
+    public AudioSource shuffleSounds; 
 
     Debugging Debug_Output;
     public EndScreen_Display Display_EndScreen;
@@ -83,6 +84,7 @@ public class Deck : MonoBehaviour
             game.NextTurn_Ready = false;
             bank.DestroyCards();
         }
+        shuffleSounds.Play(); 
         DrawCards();
 
     }

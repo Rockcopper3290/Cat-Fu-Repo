@@ -10,6 +10,7 @@ public class DragDrop : MonoBehaviour
     public GameObject dropZone;
     private GameObject startParent;
     private Vector2 startPosition; // start of where the card is 
+    public AudioSource wrongAreaSound; 
     
     //private bool CardInPlayerZone;
     //public Deck playerDeck; 
@@ -33,13 +34,6 @@ public class DragDrop : MonoBehaviour
     {
         isOverDropSonze = true; // in the drop zone is equal true
         dropZone = collision.gameObject; // dropzone is now equal to dropzone the player is colliding with
-
-        //playerDeck.HandSize--;
-
-        //if (collision.gameObject.CompareTag("CompZone"))
-        //{
-        //    transform.position = startPosition; // set the card back to its original position if in computers zone
-        //}
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -68,6 +62,7 @@ public class DragDrop : MonoBehaviour
         {
             transform.position = startPosition; // set the card back to its original position
             transform.SetParent(startParent.transform, false);
+            wrongAreaSound.Play(); 
             //CardInPlayerZone = false; 
         }
     }

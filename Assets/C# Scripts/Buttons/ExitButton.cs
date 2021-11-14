@@ -9,8 +9,11 @@ using UnityEngine;
 
 public class ExitButton : MonoBehaviour
 {
+    public AudioSource buttonClickSound;
+
     public void ExitGame()
     {
+        buttonClickSound.Play();
         Application.Quit();
         Debug.Log("Game was exited"); // for checking
     }

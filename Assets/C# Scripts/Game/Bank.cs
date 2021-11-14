@@ -165,7 +165,7 @@ public class Bank : MonoBehaviour
                 {
                     string GuardBreakCardName = Player_GuardBreak_ScoredCards[k].name;
 
-                    if (AttackCardName != DefenceCardName && DefenceCardName != GuardBreakCardName)
+                    if (AttackCardName != DefenceCardName && DefenceCardName != GuardBreakCardName && GuardBreakCardName != AttackCardName)
                     {
                         WasWinConditionFulfilled = true;
                     }

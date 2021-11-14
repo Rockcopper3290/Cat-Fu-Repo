@@ -24,7 +24,7 @@ public class Submit_Button : MonoBehaviour
     //used as a flag to make sure that the program knows that the player has taken their turn
     public bool subButtonClicked;
 
-
+    public AudioSource wrongAmountSound; 
     private Card CurrentCard;
 
 
@@ -40,6 +40,7 @@ public class Submit_Button : MonoBehaviour
             {
                 //TODO: output error message to the board so that the players can see it
                 //Debug.Log("!! Please enter the correct amount of cards !!");
+                wrongAmountSound.Play(); 
             }
             else
             {

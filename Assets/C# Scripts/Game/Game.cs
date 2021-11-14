@@ -27,8 +27,12 @@ public class Game : MonoBehaviour
 
     public Submit_Button submitButton;
     public AIBehaviour AI_Behaviour;
+    public CPU_AI CpuAI;
     public Deck deck;
     public Bank bank;
+
+    public AudioSource winningSound;
+    public AudioSource losingSound; 
 
     //public Debugging debug;
 
@@ -41,7 +45,10 @@ public class Game : MonoBehaviour
         //If they have begin main game logic
         if (AI_Behaviour.AIPlayed == true)
         {
+            //CpuAI.CpuAI_Main();
+            
             MainGame();
+
         }
     }
 
@@ -51,6 +58,8 @@ public class Game : MonoBehaviour
         //get Values of:
         // Player Card
         // Cpu Card
+
+        //CpuAI.CpuAI_Main();
 
         Player_Card = submitButton.PlayerSelection.name;
         CPU_Card = AI_Behaviour.EnemySelection.name;
@@ -97,6 +106,7 @@ public class Game : MonoBehaviour
         {
             //score the players card
             bank.ScoreCards(Player_Card_Array[0], Player_Card_Array[4], DidThePlayerWin);
+            winningSound.Play();
             Debug.Log("Player won the round");
 
         }
@@ -104,6 +114,7 @@ public class Game : MonoBehaviour
         {
             // A Tie, No one scores this round, continue to next round
             bank.GameTied();
+            losingSound.Play();
             Debug.Log("Tie: no winners");
 
         }
@@ -111,6 +122,7 @@ public class Game : MonoBehaviour
         {
             //CPU Scores their card
             bank.ScoreCards(CPU_Card_Array[0], CPU_Card_Array[4], DidThePlayerWin);
+            losingSound.Play();
             Debug.Log("CPU won the round");
 
         }
@@ -121,7 +133,7 @@ public class Game : MonoBehaviour
         NextTurn_Ready = true;
     }
 
-    private string asignElement(string element)
+    public string asignElement(string element)
     {
         if (element == "A")
         {
@@ -199,7 +211,7 @@ public class Game : MonoBehaviour
 
         bool answer = false;
         
-        //is the Player card the same as the CPU card?
+        //Does the player card beat the CPU card (Type wise)?
         if (playerCard_Type == "Attack")
         {
             if (CPUCard_Type == "Defend")
