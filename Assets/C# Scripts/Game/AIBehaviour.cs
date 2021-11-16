@@ -9,14 +9,25 @@ public class AIBehaviour : MonoBehaviour
     public GameObject EnemySelection;
 
 
-    public bool isSmartAI_Enabled = true;
+     
+    public bool isSmartAI_Enabled;
     public bool AIPlayed = false;
 
     public CPU_AI cpu_AI;
     public Submit_Button submitButton;
     public Deck deck;
+    
+
+
     //public Game game;
     // Update is called once per frame
+    public void Start()
+    {
+        // Will set the bool
+        // True - AI function is used
+        // False - A random card will be picked
+        isSmartAI_Enabled = ModePicked.smartAIEnabled;
+    }
     public void Update()
     {
         // check if the player has pressed the submit button, 
