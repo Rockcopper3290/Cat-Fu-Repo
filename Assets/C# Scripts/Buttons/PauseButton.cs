@@ -62,7 +62,7 @@ public class PauseButton : MonoBehaviour
     // makes sure, when player goes back to the main menu they go back to the right scene and that time is set back to normal
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main_Menu");
         Time.timeScale = 1f; // sets time to normal time 
         pauseMenuUI.SetActive(false); // disables pause panel
         buttonClickSound.Play();

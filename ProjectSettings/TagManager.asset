@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CompZone
   - PlayerZone
+  - Music
   layers:
   - Default
   - TransparentFX

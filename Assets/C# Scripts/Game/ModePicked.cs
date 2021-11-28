@@ -10,14 +10,14 @@ public class ModePicked : MonoBehaviour
   
     public void EasyMode(string sceneName)
     {
-        smartAIEnabled = false;
         SceneManager.LoadScene(sceneName);
+        smartAIEnabled = false;
     }
 
     public void HardMode(string sceneName)
     {
-        smartAIEnabled = true;
         SceneManager.LoadScene(sceneName);
+        smartAIEnabled = true;
     }
 
 }
